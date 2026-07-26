@@ -139,7 +139,11 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Blockchain & Infra',
-    items: ['Ethereum', 'Foundry', 'LayerZero', 'Chainlink', 'Docker', 'Linux', 'CI/CD']
+    items: ['Ethereum', 'Foundry', 'LayerZero', 'Chainlink', 'Smart Contract Dev']
+  },
+  {
+    category: 'DevOps & Infra',
+    items: ['Git', 'GitHub Actions', 'Linux (LPI)', 'Systemd Automation', 'Rate Limiting', 'CI/CD Pipelines']
   },
   {
     category: 'Testing & QA',
