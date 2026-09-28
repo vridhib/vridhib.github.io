@@ -12,7 +12,7 @@ const containerVariants: Variants = {
   }
 }
 
-export function ImpactFrame() {
+export function TelemetryPanel() {
   const [nodes, setNodes] = useState(4);
   const [density, setDensity] = useState(0.84)
   const [heights, setHeights] = useState<number[]>([8, 14, 6, 11]);
@@ -35,6 +35,7 @@ export function ImpactFrame() {
       variants={containerVariants}
       initial="hidden"
       animate="show"
+      aria-hidden="true"
       className="relative w-full max-w-sm aspect-[4/5] border border-dusty-violet/20 p-6 bg-ink-violet/40 backdrop-blur-sm flex flex-col shadow-2xl shadow-black/30"
     >
 
@@ -46,37 +47,37 @@ export function ImpactFrame() {
 
       {/* Header */}
       <header className="font-mono text-xs text-parchment/40 uppercase tracking-widest mb-6 flex justify-between border-b border-dusty-violet/10 pb-3">
-        <span>System: ONO_v0.1</span>
+        <span>SYSTEM · LIVE</span>
         <span className="text-dusty-violet flex items-center gap-1.5">
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-dusty-violet opacity-75"></span>
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-dusty-violet"></span>
           </span>
-          LIVE
+          ACTIVE
         </span>
       </header>
 
       {/* Main Telemetry */}
       <dl className="flex-1 flex flex-col justify-center font-mono text-sm space-y-4">
         <div className="flex justify-between items-center transition-opacity duration-300">
-          <dt className="text-parchment/60">Ingesting SWIFT stream...</dt>
-          <dd className="text-gold-accent font-medium tabular-nums">{nodes} txns</dd>
+          <dt className="text-parchment/60">Throughput</dt>
+          <dd className="text-gold-accent font-medium tabular-nums">{nodes} ops/s</dd>
         </div>
 
         <div className="flex justify-between items-center">
-          <dt className="text-parchment/60">Graph Density:</dt>
+          <dt className="text-parchment/60">Density:</dt>
           <dd className="text-parchment tabular-nums">{density}</dd>
         </div>
 
         <div className="flex justify-between items-center">
-          <dt className="text-parchment/60">Netting Cycles:</dt>
+          <dt className="text-parchment/60">Cycles:</dt>
           <dd className="text-dusty-violet tabular-nums">{Math.floor(nodes * 1.5)}</dd>
         </div>
       </dl>
 
-      {/* Simulated Netting Visualization */}
+      {/* Animated Bars */}
       <div className="pt-4 space-y-2">
-        <div className="text-parchment/40 text-xs uppercase tracking-wider">Executing Multilateral Net...</div>
+        <div className="text-parchment/40 text-xs uppercase tracking-wider">Processing</div>
         <div className="flex gap-1 items-end h-6">
           {heights.map((height, i) => (
             <motion.div
@@ -91,7 +92,7 @@ export function ImpactFrame() {
 
       {/* Footer */}
       <footer className="font-mono text-[10px] text-parchment/30 uppercase tracking-widest mt-4">
-        Liquidity optimized: <span className="text-gold-accent/60">42.8%</span>
+        Latency: <span className="text-gold-accent/60">&lt;50ms</span>
       </footer>
     </motion.aside>
   );
