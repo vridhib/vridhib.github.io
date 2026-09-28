@@ -15,12 +15,11 @@ export function ContactSection() {
 
               {/* Editorial Headline */}
               <h2 className="font-serif text-4xl md:text-6xl text-parchment tracking-tight leading-[1.1] mb-12">
-                Let's architect something <br />
-                <span className="italic font-light text-gold-accent">complex</span> together.
+                Let's <span className="italic font-light text-gold-accent">build</span> something together.
               </h2>
 
               <p className="font-sans text-lg text-parchment/60 max-w-xl leading-relaxed mb-12">
-                I am seeking full-stack engineering roles, particularly in FinTech, tokenization, and infrastructure. If you are building systems where correctness is non-negotiable, let's connect.
+                I'm looking for backend or full-stack roles in teams where correctness is non-negotiable.
               </p>
 
               {/* The Links */}

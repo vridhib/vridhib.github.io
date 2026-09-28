@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { ImpactFrame } from "@/components/ui/ImpactFrame";
+import { TelemetryPanel } from "@/components/ui/TelemetryPanel";
 import { ArrowDown } from "lucide-react";
 import { Typewriter } from "../ui/Typewriter";
 import { LiveClock } from "../ui/LiveClock";
@@ -38,26 +38,18 @@ export default function Hero() {
           className="col-span-12 md:col-span-7 flex flex-col justify-center pb-20"
         >
           <motion.p variants={itemVariants} className="font-mono text-xs uppercase tracking-[0.3em] text-dusty-violet mb-8 h-4">
-            <Typewriter text="Full-Stack Engineer && FinTech Architecture" speed={40} />
+            <Typewriter text="Full-Stack Developer" speed={40} />
           </motion.p>
 
           <motion.h1
             variants={itemVariants}
             className="font-serif text-5xl md:text-7xl leading-[0.95] tracking-tighter mb-10"
           >
-            I build <span className="italic font-light text-gold-accent">infrastructure</span>  for complex financial state machines.
+            I build <span className="italic font-light text-gold-accent">reliable systems</span> from the database up.
           </motion.h1>
 
           <motion.p variants={itemVariants} className="font-sans text-lg text-parchment/70 max-w-xl leading-relaxed mb-12">
-            My focus is on the hard backend problems: taking complex business logic, like cryptographic audit trails, real-time risk models, and algorithmic settlement, and architecting reliable, rigorously tested state machines. Currently building an {" "}
-            <a
-              href="https://github.com/vridhib/obligation-net-optimizer"
-              target="_blank"
-              className="text-parchment underline decoration-gold-accent/40 underline-offset-4 decoration-1 hover:decoration-gold-accent hover:text-gold-accent transition-colors"
-            >
-              Obligation Net Optimizer (ONO)
-            </a>{" "}
-            for multilateral clearing using live directed multigraphs.
+            My focus is on backend problems that require real design: graph algorithms, asynchronous pipelines, and API design under real constraints. I've built a multilateral netting engine, cryptographic audit trail, and security tooling, with hermetic test suites and CI.
           </motion.p>
 
           <motion.nav variants={itemVariants} className="flex items-center gap-8 font-mono text-sm"
@@ -78,7 +70,7 @@ export default function Hero() {
         {/* Right Column: Visualizer + Clock */}
         <div className="hidden md:flex col-span-5 items-start justify-center pt-10">
           <div className="flex flex-col items-center w-full gap-6">
-            <ImpactFrame />
+            <TelemetryPanel />
             <LiveClock />
           </div>
         </div>
