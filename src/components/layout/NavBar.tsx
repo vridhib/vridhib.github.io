@@ -13,7 +13,7 @@ export function NavBar() {
 
         <span className="text-gold-accent flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-gold-accent animate-pulse"></span>
-          Available Q3 2026
+          Available Q4 2026
         </span>
       </div>
     </nav>
