@@ -41,7 +41,7 @@ export interface SkillGroup {
 
 export interface OSSContribution {
   project: string;
-  type: 'Bug Report' | 'Pull Request' | 'Docs PR';
+  type: 'Bug Report' | 'Feature PR' | 'Docs PR' | 'PR';
   status: 'Merged' | 'Resolved' | 'Submitted' | 'Closed';
   title: string;
   description: string;

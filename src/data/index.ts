@@ -210,27 +210,35 @@ export const skillGroups: SkillGroup[] = [
 
 export const openSourceContributions: OSSContribution[] = [
   {
+    project: 'PhilanthroPy',
+    type: 'Feature PR',
+    status: 'Submitted',
+    title: 'Salesforce Nonprofit Cloud GiftTransaction Ingest Reader',
+    description: 'Added a Salesforce Nonprofit Cloud GiftTransaction export reader for report labels and API field names, plus an `Unpaid` status exclusion set that guards against the commitment verus payment double counting. Wired into the CLI as `philanthropy features --source nonprofit_cloud`',
+    link: 'https://github.com/PhilanthroPy-Project/PhilanthroPy/pull/315'
+  },
+  {
     project: 'OpenBB',
     type: 'Bug Report',
     status: 'Resolved',
     title: 'Silent failure parsing modular OpenAPI 3.1.0 specs',
-    description: 'Identified a critical silent failure in the V5 codegen workflow where modular YAML $ref tags failed to parse, outputting an empty package with zero commands. Filed a detailed repro report leading to a fast resolution by the core team.',
+    description: 'Identified a critical silent failure in the V5 codegen workflow where modular YAML $ref tags failed to parse, producing an empty package with zero commands. Filed a detailed reproduction report, leading to a fast resolution by the core team.',
     link: 'https://github.com/OpenBB-finance/OpenBB/issues/7585'
-  },
-  {
-    project: 'exchange_calendars',
-    type: 'Pull Request',
-    status: 'Closed',
-    title: 'XSHG: Correct 2026 holidays & pandas 2.2+ deprecation fix',
-    description: 'Investigated Shanghai Stock Exchange (XSHG) holiday schedules. While the primary PR was superseded, identified and reported a separate bug in the CSV generation script related to a deprecated pandas 2.2+ argument.',
-    link: 'https://github.com/gerrymanoim/exchange_calendars/pull/582'
   },
   {
     project: 'OpenZeppelin',
     type: 'Docs PR',
     status: 'Submitted',
     title: 'Security docs: TimelockController DoS warning & Access Control',
-    description: 'Submitted documentation PRs to improve developer onboarding and security, including fixing the TimelockController admin docs, adding CANCELLER_ROLE, and adding a Denial of Service (DoS) warning.',
+    description: 'Documentation PR to improve developer onboarding and security: fixed the TimelockController admin docs, added the missing CANCELLER_ROLE, and added a Denial of Service (DoS) warning.',
     link: 'https://github.com/OpenZeppelin/docs/pull/143'
+  },
+  {
+    project: 'exchange_calendars',
+    type: 'PR',
+    status: 'Closed',
+    title: 'XSHG: Correct 2026 holidays & pandas 2.2+ deprecation fix',
+    description: 'Investigated Shanghai Stock Exchange (XSHG) 2026 holiday schedules. The initial PR was superseded by a broader maintainer fix, but the review surfaced a separate deprecased pandas 2.2+ argument in the CSV generation script, which was reported upstream.',
+    link: 'https://github.com/gerrymanoim/exchange_calendars/pull/582'
   }
 ];
