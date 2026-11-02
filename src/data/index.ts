@@ -212,10 +212,18 @@ export const openSourceContributions: OSSContribution[] = [
   {
     project: 'PhilanthroPy',
     type: 'Feature PR',
-    status: 'Submitted',
+    status: 'Merged',
     title: 'Salesforce Nonprofit Cloud GiftTransaction Ingest Reader',
-    description: 'Added a Salesforce Nonprofit Cloud GiftTransaction export reader for report labels and API field names, plus an `Unpaid` status exclusion set that guards against the commitment verus payment double counting. Wired into the CLI as `philanthropy features --source nonprofit_cloud`',
+    description: 'Export reader for Salesforce Nonprofit Cloud (NPC) gift transactions, accepting both report labels and API field names. Uses a `("Paid",)` status allowlist rather than an exclusion set, since NPC status vocabularies are org-extensible and an unrecognized status cannot be assumed to be a received transaction. Wired into the CLI as `philanthropy features --source nonprofit_cloud`.',
     link: 'https://github.com/PhilanthroPy-Project/PhilanthroPy/pull/315'
+  },
+  {
+    project: 'PhilanthroPy',
+    type: 'Feature PR',
+    status: 'Merged',
+    title: 'Blackbaud CRM Revenue Ingest Reader',
+    description: 'Export reader for Blackbaud CRM revenue records, accepting both report labels and database column names. Uses a `("Payment",)` revenue type allowlist. This is the same mechanism as the NPC bridge but inverted in reasoning: Blackbaud\'s revenue type is a fixed schema enumeration, so the allowlist can be exhaustive. Registered in `_read_gifts` as `"blackbaud_crm"`.',
+    link: 'https://github.com/PhilanthroPy-Project/PhilanthroPy/pull/332'
   },
   {
     project: 'OpenBB',
